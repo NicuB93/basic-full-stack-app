@@ -113,15 +113,18 @@ FRONTEND_URL=http://localhost:3000
 ### Frontend (.env)
 
 ```env
-NEXT_PUBLIC_API_URL=http://localhost:3001
-NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET="your-nextauth-secret-here"
 OPEN_API_JSON_URL=http://localhost:8080/api/json
 NEXT_PUBLIC_BE_URL=http://localhost:8080
 
+NEXTAUTH_SECRET=your-nextauth-secret
+NEXTAUTH_URL=http://localhost:3000
+JWT_SECRET=53007084345d47089f0c597e32b88f89cab3bf9d6bef52db1429d11c3bd2af3d
+
 ```
 
-**Note:** `NEXTAUTH_SECRET` can be generated using `openssl rand -base64 32`.
+**Note:**
+`NEXTAUTH_SECRET` can be generated using `openssl rand -base64 32`.
+`JWT_SECRET` can be generated using `openssl rand -hex 32`.
 
 ## Available Scripts
 
