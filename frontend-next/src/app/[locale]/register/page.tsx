@@ -1,12 +1,18 @@
 "use client";
 
-import { signIn } from "next-auth/react";
-import Link from "next/link";
+import { Link } from "@/components/Link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export default function LoginPage() {
+import { register } from "@/generated";
+import { rootRoutes } from "@/utils/routes";
+import { signIn } from "next-auth/react";
+import { useTranslation } from "@/i18n/useTranslation";
+
+export default function RegisterPage() {
   const router = useRouter();
+  const { t } = useTranslation("auth");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -18,20 +24,29 @@ export default function LoginPage() {
     setIsLoading(true);
 
     try {
-      const result = await signIn("credentials", {
-        username: email,
-        password: password,
-        redirect: false,
+      const response = await register({
+        body: {
+          name,
+          email,
+          password,
+        },
       });
 
-      if (result?.error) {
-        setError("Invalid email or password");
-      } else if (result?.ok) {
-        router.push("/");
-        router.refresh();
+      if (response.data) {
+        const result = await signIn("credentials", {
+          username: email,
+          password: password,
+          redirect: false,
+        });
+
+        if (result?.ok) {
+          router.push("/");
+          router.refresh();
+        }
       }
-    } catch {
-      setError("Something went wrong. Please try again.");
+    } catch (_err) {
+      console.error("Registration error:", _err);
+      setError(t("Something went wrong. Please try again."));
     } finally {
       setIsLoading(false);
     }
@@ -42,16 +57,34 @@ export default function LoginPage() {
       <div className="w-full max-w-md">
         <div className="bg-white dark:bg-[#1a1a1a] rounded-lg border border-black/[.08] dark:border-white/[.145] p-8 shadow-sm">
           <h1 className="text-2xl font-semibold mb-6 text-center">
-            Welcome Back
+            {t("Create an Account")}
           </h1>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label
+                htmlFor="name"
+                className="block text-sm font-medium mb-1.5"
+              >
+                {t("Name")}
+              </label>
+              <input
+                id="name"
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                className="w-full px-3 py-2 border border-black/[.08] dark:border-white/[.145] rounded-md bg-transparent focus:outline-none focus:ring-2 focus:ring-foreground/20"
+                placeholder="John Doe"
+              />
+            </div>
+
+            <div>
+              <label
                 htmlFor="email"
                 className="block text-sm font-medium mb-1.5"
               >
-                Email
+                {t("Email")}
               </label>
               <input
                 id="email"
@@ -69,7 +102,7 @@ export default function LoginPage() {
                 htmlFor="password"
                 className="block text-sm font-medium mb-1.5"
               >
-                Password
+                {t("Password")}
               </label>
               <input
                 id="password"
@@ -77,9 +110,13 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                minLength={6}
                 className="w-full px-3 py-2 border border-black/[.08] dark:border-white/[.145] rounded-md bg-transparent focus:outline-none focus:ring-2 focus:ring-foreground/20"
                 placeholder="••••••••"
               />
+              <p className="text-xs text-foreground/60 mt-1">
+                {t("Must be at least 6 characters")}
+              </p>
             </div>
 
             {error && (
@@ -93,16 +130,19 @@ export default function LoginPage() {
               disabled={isLoading}
               className="w-full bg-foreground text-background py-2.5 rounded-md font-medium hover:bg-[#383838] dark:hover:bg-[#ccc] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isLoading ? "Logging in..." : "Log In"}
+              {isLoading ? t("Creating account...") : t("Sign Up")}
             </button>
           </form>
 
           <div className="mt-6 text-center text-sm">
             <span className="text-foreground/60">
-              Don&apos;t have an account?{" "}
+              {t("Already have an account?")}{" "}
             </span>
-            <Link href="/register" className="font-medium hover:underline">
-              Sign up
+            <Link
+              href={rootRoutes.login}
+              className="font-medium hover:underline"
+            >
+              {t("Log in")}
             </Link>
           </div>
         </div>

@@ -1,0 +1,55 @@
+{
+  "common": {
+    "Home": "Home",
+    "About": "About",
+    "Profile": "Profile",
+    "Login": "Login",
+    "Register": "Register",
+    "Logout": "Logout"
+  },
+  "home": {
+    "Welcome to MyApp": "Welcome to MyApp",
+    "A modern full-stack application with authentication and multilingual support": "A modern full-stack application with authentication and multilingual support",
+    "Get Started": "Get Started",
+    "Learn More": "Learn More",
+    "Secure Authentication": "Secure Authentication",
+    "Built-in user authentication with NextAuth.js for secure login and registration": "Built-in user authentication with NextAuth.js for secure login and registration",
+    "Multilingual Support": "Multilingual Support",
+    "Switch between English and Romanian languages with a single click": "Switch between English and Romanian languages with a single click",
+    "Modern Design": "Modern Design",
+    "Clean interface with Tailwind CSS and automatic dark mode support": "Clean interface with Tailwind CSS and automatic dark mode support",
+    "Ready to get started?": "Ready to get started?",
+    "Create your account today and explore all features": "Create your account today and explore all features",
+    "Sign Up Now": "Sign Up Now"
+  },
+  "about": {
+    "About Us": "About Us",
+    "Welcome to our application! This is a modern full-stack application built with Next.js, featuring authentication, beautiful UI, and multilingual support.": "Welcome to our application! This is a modern full-stack application built with Next.js, featuring authentication, beautiful UI, and multilingual support.",
+    "We're committed to providing the best user experience possible, with a clean interface and powerful features.": "We're committed to providing the best user experience possible, with a clean interface and powerful features.",
+    "Technologies Used": "Technologies Used"
+  },
+  "profile": {
+    "Profile": "Profile",
+    "View and manage your account information": "View and manage your account information",
+    "Account Information": "Account Information",
+    "User ID": "User ID",
+    "Email Address": "Email Address",
+    "Your account is active and verified": "Your account is active and verified"
+  },
+  "auth": {
+    "Welcome Back": "Welcome Back",
+    "Email": "Email",
+    "Password": "Password",
+    "Logging in...": "Logging in...",
+    "Log In": "Log In",
+    "Don't have an account?": "Don't have an account?",
+    "Sign up": "Sign up",
+    "Create an Account": "Create an Account",
+    "Name": "Name",
+    "Must be at least 6 characters": "Must be at least 6 characters",
+    "Creating account...": "Creating account...",
+    "Sign Up": "Sign Up",
+    "Already have an account?": "Already have an account?",
+    "Log in": "Log in"
+  }
+}

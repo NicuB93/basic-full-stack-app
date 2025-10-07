@@ -1,0 +1,55 @@
+{
+  "common": {
+    "Home": "Acasă",
+    "About": "Despre",
+    "Profile": "Profil",
+    "Login": "Autentificare",
+    "Register": "Înregistrare",
+    "Logout": "Deconectare"
+  },
+  "home": {
+    "Welcome to MyApp": "Bine ați venit la MyApp",
+    "A modern full-stack application with authentication and multilingual support": "O aplicație full-stack modernă cu autentificare și suport multilingv",
+    "Get Started": "Începe acum",
+    "Learn More": "Află mai multe",
+    "Secure Authentication": "Autentificare sigură",
+    "Built-in user authentication with NextAuth.js for secure login and registration": "Autentificare integrată cu NextAuth.js pentru conectare și înregistrare sigură",
+    "Multilingual Support": "Suport multilingv",
+    "Switch between English and Romanian languages with a single click": "Comutați între limbile engleză și română cu un singur clic",
+    "Modern Design": "Design modern",
+    "Clean interface with Tailwind CSS and automatic dark mode support": "Interfață curată cu Tailwind CSS și suport automat pentru modul întunecat",
+    "Ready to get started?": "Gata să începi?",
+    "Create your account today and explore all features": "Creează-ți contul astăzi și explorează toate funcționalitățile",
+    "Sign Up Now": "Înregistrează-te acum"
+  },
+  "about": {
+    "About Us": "Despre noi",
+    "Welcome to our application! This is a modern full-stack application built with Next.js, featuring authentication, beautiful UI, and multilingual support.": "Bine ați venit la aplicația noastră! Aceasta este o aplicație full-stack modernă construită cu Next.js, cu autentificare, UI frumos și suport multilingv.",
+    "We're committed to providing the best user experience possible, with a clean interface and powerful features.": "Ne angajăm să oferim cea mai bună experiență utilizator posibilă, cu o interfață curată și funcții puternice.",
+    "Technologies Used": "Tehnologii utilizate"
+  },
+  "profile": {
+    "Profile": "Profil",
+    "View and manage your account information": "Vizualizați și gestionați informațiile contului dvs.",
+    "Account Information": "Informații cont",
+    "User ID": "ID utilizator",
+    "Email Address": "Adresă email",
+    "Your account is active and verified": "Contul dvs. este activ și verificat"
+  },
+  "auth": {
+    "Welcome Back": "Bine ai revenit",
+    "Email": "Email",
+    "Password": "Parolă",
+    "Logging in...": "Se conectează...",
+    "Log In": "Conectare",
+    "Don't have an account?": "Nu ai un cont?",
+    "Sign up": "Înregistrează-te",
+    "Create an Account": "Creează un cont",
+    "Name": "Nume",
+    "Must be at least 6 characters": "Trebuie să aibă cel puțin 6 caractere",
+    "Creating account...": "Se creează contul...",
+    "Sign Up": "Înregistrare",
+    "Already have an account?": "Ai deja un cont?",
+    "Log in": "Conectare"
+  }
+}
