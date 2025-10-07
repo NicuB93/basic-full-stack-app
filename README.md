@@ -121,6 +121,8 @@ NEXT_PUBLIC_BE_URL=http://localhost:8080
 
 ```
 
+**Note:** `NEXTAUTH_SECRET` can be generated using `openssl rand -base64 32`.
+
 ## Available Scripts
 
 ### Backend
